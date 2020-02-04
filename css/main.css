@@ -1,5 +1,10 @@
+
+
 h1.welcome {
     text-align: center;
+    padding: 10px;
+    color: white
+    ;
 
 }
 input.welcome {
@@ -10,4 +15,50 @@ input.welcome {
     padding: 10px;
     font-size: 24px;
     text-align: center;
+    border-radius: 5px;
 }
+
+.nav-bar {
+    background: linear-gradient(-90deg, rgb(125, 11, 231), rgb(123, 216, 207));
+    height: 60px;
+    margin-bottom: 30px;
+  }
+
+body {
+    background: rgb(218, 218, 218);
+    padding: 40px;
+}
+#Vueapp {
+    background: #fff;
+    border-radius: 3px;
+    padding: 20px;
+    transition: all 0.2s;
+}
+
+li {
+    margin: 8px 0;
+}
+
+del {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+.xbutton {
+    font-size: 20px;
+    background-color: tomato;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+}
+  
+.padding {
+      padding: 1px 7px 2px;
+    }
+
+.flex {
+    display: flex;
+}
+
+.space {
+      flex-grow: 1;
+    }

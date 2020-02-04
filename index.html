@@ -8,19 +8,62 @@
         <title>My VueJS app</title>
     </head>
     <body>
-        <div id="vueApp">
+      <!-- Fucked up shit from tutorial
+          <div id="vueApp">
             <h1 class="welcome">{{welcomeMessage}}</h1>
             <input class="welcome" v-model="welcomeMessage" />
-            <input v-model="newItem" v-on:keyup.enter='addItem'/>
+            <input v-model="newItem" placeholder="edit me" v-on:keyup.enter='addItem'/>
             <span><button @click.prevent="addItem">Add</button></span>
-            <!--<small>adding...{{newItem}}</small>-->
+            <small>adding...{{newItem}}</small>
             <h5>List</h5>
             <span>----------</span>
             <ul v-for="list in lists" v-bind:key="list.id">
                 <input type="checkbox">{{list.item}}<br>
             </ul>
-        </div>
+        </div> -->
 
+        <!-- Original code
+        <div id="vueApp">
+            <h1 class="welcome">{{welcomeMessage}}</h1>
+            <input class="welcome" v-model="welcomeMessage" />
+        </div> -->
+
+
+    <!--Trying out a tutorial to learn how to create a todo list 
+        that stores data. Will comment out lines as they as they 
+        are tried out. Tutorial used: 
+        https://dev.to/hugoliconv/lets-build-a-todo-app-using-vuejs-52in -->
+
+        <div id="vueApp">
+
+            <div class="nav-bar">
+            <h1 class="welcome">{{welcomeMessage}}</h1>
+            </div>
+            
+            <input type="text" 
+                class="welcome" 
+                placeholder="Add to do..."
+                v-on:keyup.enter="addTodo"
+                v-model="addTodoMessage"
+                />
+
+            <ul>
+            <!--<li class="flex">{{todos[0].text}} </li>
+                <li class="flex">{{todos[1].text}}</li> -->
+                <li v-for="todo in todos" class="flex">
+                    <label>
+                        <input type="checkbox" 
+                               v-on:click="check(todo)" 
+                               v-bind:checked="todo.done">
+                    </label>
+                    <del v-if="todo.done">{{todo.text}}</del>
+                    <span v-else>{{todo.text}}</span>
+                    <div class="space"></div>
+                    <button class="xbutton" v-on:click="removeTodo(todo.id)">X</button>
+                </li>
+
+            </ul>
+        </div>
 
 
 
