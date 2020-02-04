@@ -11,7 +11,17 @@
         <div id="vueApp">
             <h1 class="welcome">{{welcomeMessage}}</h1>
             <input class="welcome" v-model="welcomeMessage" />
+            <input v-model="newItem" v-on:keyup.enter='addItem'/>
+            <span><button @click.prevent="addItem">Add</button></span>
+            <!--<small>adding...{{newItem}}</small>-->
+            <h5>List</h5>
+            <span>----------</span>
+            <ul v-for="list in lists" v-bind:key="list.id">
+                <input type="checkbox">{{list.item}}<br>
+            </ul>
         </div>
+
+
 
 
         <script src="js/vue.min.js"></script>
