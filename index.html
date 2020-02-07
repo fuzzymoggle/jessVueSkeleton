@@ -37,24 +37,17 @@
         <div id="vueApp">
 
             <div class="nav-bar">
-            <h1 class="welcome">{{welcomeMessage}}</h1>
+                <h1 class="welcome">{{welcomeMessage}}</h1>
             </div>
             
-            <input type="text" 
-                class="welcome" 
-                placeholder="Add to do..."
-                v-on:keyup.enter="addTodo"
-                v-model="addTodoMessage"
-                />
+            <input type="text" class="welcome" placeholder="Add to do..." v-on:keyup.enter="addTodo" v-model="addTodoMessage">
 
             <ul>
             <!--<li class="flex">{{todos[0].text}} </li>
                 <li class="flex">{{todos[1].text}}</li> -->
                 <li v-for="todo in todos" class="flex">
                     <label>
-                        <input type="checkbox" 
-                               v-on:click="check(todo)" 
-                               v-bind:checked="todo.done">
+                        <input type="checkbox" v-on:click="check(todo)" v-bind:checked="todo.done">
                     </label>
                     <del v-if="todo.done">{{todo.text}}</del>
                     <span v-else>{{todo.text}}</span>

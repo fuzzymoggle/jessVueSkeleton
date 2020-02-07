@@ -19,9 +19,15 @@ input.welcome {
 }
 
 .nav-bar {
-    background: linear-gradient(-90deg, rgb(125, 11, 231), rgb(123, 216, 207));
+    background: linear-gradient(-90deg, rgb(0, 0, 0), rgb(125, 141, 139));
     height: 60px;
     margin-bottom: 30px;
+    font-family: monospace;
+    /* margin-bottom: 10px; */
+    /* padding-bottom: 10px; */
+    /* border: solid;
+    border-color: black;
+    border-radius: 3px; */
   }
 
 body {
@@ -36,7 +42,14 @@ body {
 }
 
 li {
-    margin: 8px 0;
+    margin: 10px 0;
+    font-family: monospace;
+    font-size: 16pt;
+    background-color: slategray;
+    padding: 20px;
+    border: solid;
+    border-color: black;
+    border-radius: 3px;
 }
 
 del {
@@ -47,8 +60,8 @@ del {
     font-size: 20px;
     background-color: tomato;
     color: black;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 5px;
+    border-radius: 5px;
 }
   
 .padding {

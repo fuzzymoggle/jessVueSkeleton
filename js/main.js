@@ -44,7 +44,7 @@ let app = new Vue({
     data: {
         welcomeMessage: 'My To Do List',
         todos: [],
-        addTodoMessage: ''
+        addTodoMessage: '',
     },
 
     methods: {
