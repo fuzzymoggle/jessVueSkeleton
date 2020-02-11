@@ -51,7 +51,12 @@ let app = new Vue({
         addTodo(event){
             const text = event.target.value
             this.todos.push({text, done: false, id: Date.now()})
-            event.target.value = ''
+            // event.target.value = ''
+            // this.event.target.value = ''
+            // this.todos =''
+            // event.target.value.text = ''
+            // this.event.target.value.text = ''
+            this.addTodoMessage = ''
         },
 
         removeTodo(id) {
