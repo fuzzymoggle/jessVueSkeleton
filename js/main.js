@@ -39,19 +39,41 @@
 //     },
 // });
 
+var STORAGE_KEY = 'vueApp-todo-12345'
+var todoStorage = {
+    fetch: function () {
+        var todos = JSON.parse(localStorage.getItem(STORAGE_KEY) || '[]');
+        return todos;
+    },
+    save: function (todos) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(todos));
+    }
+}
+
+
 let app = new Vue({
     el: "#vueApp",
     data: {
         welcomeMessage: 'My To Do List',
-        todos: [],
+        // todos: [],
+        todos: todoStorage.fetch(),
         addTodoMessage: '',
+    },
+
+    watch: {
+        todos: {
+            handler: function(todos) {
+                todoStorage.save(todos);
+            }
+        }
     },
 
     methods: {
         addTodo(event){
             const text = event.target.value
             this.todos.push({text, done: false, id: Date.now()})
-            event.target.value = ''
+            // event.target.value = ''
+            this.addTodoMessage = ''
         },
 
         removeTodo(id) {
